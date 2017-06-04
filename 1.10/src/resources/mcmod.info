@@ -3,7 +3,7 @@
   "modid": "quickempty",
   "name": "Quick Empty",
   "description": "Allows you to quickly empty a block (e.g. a furnace) without opening the GUI by ctrl-left clicking it",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "mcversion": "1.10.2",
   "url": "",
   "updateUrl": "",

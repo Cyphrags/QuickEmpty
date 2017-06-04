@@ -32,7 +32,7 @@ public class QuickEmptyMod
 {
 	public static final String MODNAME = "QuickEmpty";
 	public static final String MODID = "quickempty";
-	public static final String VERSION = "1.0.0";
+	public static final String VERSION = "1.0.1";
 	
 	public static File configurationFile;
 	public static Configuration configuration;
@@ -52,7 +52,20 @@ public class QuickEmptyMod
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(MODID);
 		snw.registerMessage(new PacketBlockHandler(), PacketBlock.class, 0, Side.SERVER);
 		snw.registerMessage(new PacketEntityHandler(), PacketEntity.class, 1, Side.SERVER);
-		
+	}
+	
+	@Mod.EventHandler
+	public void init(FMLInitializationEvent event)
+	{
+		if(event.getSide() == Side.CLIENT)
+		{
+			MinecraftForge.EVENT_BUS.register(new EventHandler());
+		}
+	}
+	
+	@Mod.EventHandler
+	public void postInit(FMLPostInitializationEvent event)
+	{
 		// [Vanilla] Register facings
 		
 		// [Vanilla] Register indices
@@ -83,21 +96,6 @@ public class QuickEmptyMod
 		HandlerRegistry.Special.putBlock(Blocks.ENDER_CHEST, handler);
 		
 		// [Vanilla] Register ISH for Entities
-	}
-	
-	@Mod.EventHandler
-	public void init(FMLInitializationEvent event)
-	{
-		if(event.getSide() == Side.CLIENT)
-		{
-			MinecraftForge.EVENT_BUS.register(new EventHandler());
-		}
-	}
-	
-	@Mod.EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
-	
 	}
 	
 	public static void syncConfig()

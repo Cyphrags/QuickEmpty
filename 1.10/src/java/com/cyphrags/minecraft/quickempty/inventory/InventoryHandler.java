@@ -2,6 +2,7 @@ package com.cyphrags.minecraft.quickempty.inventory;
 
 import com.cyphrags.minecraft.quickempty.QuickEmptyMod;
 import com.cyphrags.minecraft.quickempty.registry.HandlerRegistry;
+import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -91,7 +92,7 @@ public class InventoryHandler
 			for(ItemStack is : mergedList)
 			{
 				//player.sendMessage(new TextComponentString("§a" + is.getCount() + " " + is.getDisplayName() + "§f"));
-				player.addChatMessage(new TextComponentString("§a" + is.stackSize + " " + is.getDisplayName() + "§f"));
+				player.addChatMessage(new TextComponentString(ChatFormatting.GREEN.toString() + is.stackSize + " " + is.getDisplayName()));
 			}
 		}
 	}
