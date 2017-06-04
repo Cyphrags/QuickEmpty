@@ -28,7 +28,7 @@ By default, every time you take something out of an inventory using the quick em
 
 
 ## For Devs
-[Source Code found at GitHub](https://github.com/cyphrags/quickempty)
+[Source Code can be found at GitHub](https://github.com/cyphrags/quickempty)
 
 QuickEmpty basically checks for IInventory and ISidedInventory for both blocks and entities.
 So if you don't want any special handling, you won't need to do anything.
@@ -36,9 +36,7 @@ So if you don't want any special handling, you won't need to do anything.
 For blocks which implement IInventory or ISidedInventory there are two ways to specify how the block should be handled:
 1. Specify the index or indices where to pull items from with: `com.cyphrags.minecraft.quickempty.registry.HandlerRegistry.Blocks.putFacing(Block b, EnumFacing facing)`
 
-2. Specify the face (side) to pull from with: `com.cyphrags.minecraft.quickempty.registry.HandlerRegistry.Blocks.putFacing(Block b, EnumFacing facing)`
-
-  if your block is an **ISidedInventory** and you have the **getSlotForFace(EnumFacing facing)** method setup correctly
+2. Specify the face (side) to pull from (if your block is an **ISidedInventory** and you have the **getSlotForFace(EnumFacing facing)** method setup correctly) with: `com.cyphrags.minecraft.quickempty.registry.HandlerRegistry.Blocks.putFacing(Block b, EnumFacing facing)`
 
 If this is not enough or your block/entity has his inventory "hidden" (like an ender chest):
 1. Create a special handler which implements `com.cyphrags.miunecraft.quickempty.registry.HandlerRegistry.ISpecialHandler`
