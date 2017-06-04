@@ -1,5 +1,5 @@
 # QuickEmpty
-![QuickEmpty Logo](https://github.com/cyphrags/quickempty/Logo.png)
+![QuickEmpty Logo](./Logo.png)
 
 ## About
 QuickEmpty is a small mod that basically has just a single feature: empty out any inventory without opening it's GUI.
